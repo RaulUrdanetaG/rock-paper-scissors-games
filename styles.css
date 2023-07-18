@@ -37,7 +37,10 @@ body {
     align-items: center;
     justify-content: center;
     gap: 10px;
-    filter: grayscale(70%);
+}
+
+.panel-imgs img{
+    filter: grayscale(100%);
 }
 
 .panel img {
@@ -57,13 +60,12 @@ body {
     max-width: 250px;
 }
 
-.player-button:hover {
+.player-button:hover img{
     cursor: pointer;
-    filter: none;
     -webkit-transform: scale(1.3);
     transform: scale(1.1);
-    transition: all .3s;
     filter: none;
+    transition: all .3s;
 }
 
 .middle-panel {

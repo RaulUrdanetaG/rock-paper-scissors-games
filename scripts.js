@@ -14,7 +14,23 @@ function getComputerChoice() {
     const weapons = ['Rock', 'Paper', 'Scissors']
     const computerSelection = weapons[Math.floor(Math.random() * weapons.length)]
 
-    
+    switch (computerSelection){
+        case 'Rock':
+            computerImg[0].style.filter = 'none';
+            computerImg[1].style.filter = 'grayscale(100%)';
+            computerImg[2].style.filter = 'grayscale(100%)';
+            break;
+        case 'Paper':
+            computerImg[0].style.filter = 'grayscale(100%)';
+            computerImg[1].style.filter = 'none';
+            computerImg[2].style.filter = 'grayscale(100%)';
+            break;
+        case 'Scissors':
+            computerImg[0].style.filter = 'grayscale(100%)';
+            computerImg[1].style.filter = 'grayscale(100%)';
+            computerImg[2].style.filter = 'none';
+            break;
+    }
     return computerSelection
 }
 
@@ -32,7 +48,7 @@ function playRound(playerSelection, computerSelection) {
         case (playerSelection === 'Rock' && computerSelection === 'Paper'):
         case (playerSelection === 'Paper' && computerSelection === 'Scissors'):
         case (playerSelection === 'Scissors' && computerSelection === 'Rock'):
-            gameInfo.innerText = `You lost!, ${playerSelection} beats ${computerSelection}`;
+            gameInfo.innerText = `You lost!, ${computerSelection} beats ${playerSelection}`;
             computerWins += 1;
             break;
     }
@@ -56,6 +72,9 @@ function resetGame() {
     cpuWins.innerText = `${computerWins}`;
     playWins.innerText = `${playerWins}`;
     rounds.innerText = `${round}`;
+    computerImg[0].style.filter = 'grayscale(100%)';
+    computerImg[1].style.filter = 'grayscale(100%)';
+    computerImg[2].style.filter = 'grayscale(100%)';
 }
 
 function endGame(playerWins, computerWins) {
