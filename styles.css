@@ -1,0 +1,98 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Pangolin&display=swap');
+html,
+body {
+    height: 100%;
+    margin: 0;
+    background-color: #303443;
+    font-family: "Pangolin";
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+}
+
+.panel {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.middle-panel {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    flex: 2 1 0;
+}
+
+.middle-panel h1{
+    font-size: 50pt;
+}
+
+.score-count{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.left-panel,
+.right-panel {
+    margin: 3em;
+    flex: 1;
+}
+
+.panel-imgs{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.panel img {
+    width: 100%;
+    height: auto;
+    min-width: 150px;
+    max-width: 250px;
+}
+
+.left-panel button,
+.right-panel button{
+    border: none;
+    background-color: #303443;
+    width: 100%;
+    height: auto;
+    min-width: 150px;
+    max-width: 250px;
+}
+
+footer{
+    padding-left: 8%;
+    padding-right: 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.creator-info{
+    display: flex;
+    gap: 5px;
+}
+
+.play-again-button{
+    color: white;
+    background-color: #303443;
+    border: 2px solid white;
+    border-radius: 5px;
+    font-family: "Pangolin";
+    font-size: 20pt;
+    padding: 5px;
+    margin: 10px;
+}

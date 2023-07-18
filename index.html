@@ -1,12 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="./styles.css">
 </head>
-<body>
 
+<body>
+    <div class="container">
+        <div class="panel left-panel">
+            <div class="panel-imgs">
+                <button><img src="./images/rock.png" alt="Rock vector image"></button>
+                <button><img src="./images/paper.png" alt="Paper Vector image"></button>
+                <button><img src="./images/scissors.png" alt="Scissors vector image"></button>
+            </div>
+            <h1 class="panel-title">Your weapon</h1>
+        </div>
+        <div class="panel middle-panel">
+            <h1>Rock, Paper, Scissors</h1>
+            <div class="score-count">
+                <div class="player-wins">
+                    <h2>Wins</h2>
+                    <h2>0</h2>
+                </div>
+                <div class="rounds">
+                    <h2>Rounds</h2>
+                    <h2>0</h2>
+                </div>
+                <div class="computer-wins">
+                    <h2>Wins</h2>
+                    <h2>0</h2>
+                </div>
+            </div>
+            <h2 class="round-info">You win!</h2>
+            <button class="play-again-button">Play Again!</button>
+        </div>
+        <div class="panel right-panel">
+            <div class="panel-imgs">
+                <img src="./images/rock.png" alt="Rock vector image">
+                <img src="./images/paper.png" alt="Paper Vector image">
+                <img src="./images/scissors.png" alt="Scissors Vector image">
+            </div>
+            <h1 class="panel-title">Computer's weapon</h1>
+        </div>
+    </div>
+    <footer>
+        <div class="creator-info">
+            <h3>Made by</h3>
+            <h3>Raul Urdaneta</h3>
+        </div>
+    </footer>
     <script src="./scripts.js"></script>
 </body>
+
 </html>
