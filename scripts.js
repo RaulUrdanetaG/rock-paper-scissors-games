@@ -1,60 +1,77 @@
+const weaponButtons = document.querySelectorAll('.weapon-button');
+const rounds = document.querySelector('.rounds .number');
+const cpuWins = document.querySelector('.computer-wins .number');
+const playWins = document.querySelector('.player-wins .number');
+const gameInfo = document.querySelector('.round-info');
+const playAgainButton = document.getElementById('play-again-button');
+const computerImg = document.querySelectorAll('.computer-weapon')
 
-let playerLives = 5;
-let computerLives = 5;
+let playerWins = 0;
+let computerWins = 0;
 let round = 0
 
 function getComputerChoice() {
     const weapons = ['Rock', 'Paper', 'Scissors']
     const computerSelection = weapons[Math.floor(Math.random() * weapons.length)]
 
+    
     return computerSelection
 }
 
 function playRound(playerSelection, computerSelection) {
     switch (true) {
         case (playerSelection === computerSelection):
-            console.log(`Thats a draw!, a pair of ${computerSelection}s means a draw`);
+            gameInfo.innerText = `Thats a draw!, a pair of ${computerSelection}s means a draw`;
             break;
         case (playerSelection === 'Rock' && computerSelection === 'Scissors'):
         case (playerSelection === 'Paper' && computerSelection === 'Rock'):
         case (playerSelection === 'Scissors' && computerSelection === 'Paper'):
-            console.log(`You beat that computer!, ${playerSelection} beats ${computerSelection}`);
-            computerLives -= 1;
+            gameInfo.innerText = `You beat that computer!, ${playerSelection} beats ${computerSelection}`;
+            playerWins += 1;
             break;
         case (playerSelection === 'Rock' && computerSelection === 'Paper'):
         case (playerSelection === 'Paper' && computerSelection === 'Scissors'):
         case (playerSelection === 'Scissors' && computerSelection === 'Rock'):
-            console.log(`You lost!, ${playerSelection} beats ${computerSelection}`);
-            playerLives -= 1;
+            gameInfo.innerText = `You lost!, ${playerSelection} beats ${computerSelection}`;
+            computerWins += 1;
             break;
     }
-    console.log(playerLives);
-    console.log(computerLives);
-    return [playerLives, computerLives];
+
+    cpuWins.innerText = `${computerWins}`;
+    playWins.innerText = `${playerWins}`;
+
+    return [playerWins, computerWins];
 }
 
 function countRounds() {
     round += 1;
-    console.log(round);
+    rounds.innerText = `${round}`;
     return round;
 }
 
 function resetGame() {
-    playerLives = 5;
-    computerLives = 5;
+    playerWins = 0;
+    computerWins = 0;
     round = 0;
+    cpuWins.innerText = `${computerWins}`;
+    playWins.innerText = `${playerWins}`;
+    rounds.innerText = `${round}`;
 }
 
-function endGame(playerLives, computerLives) {
-    if (playerLives === 0 || computerLives === 0) {
-        console.log("Game has ended")
-        resetGame();
+function endGame(playerWins, computerWins) {
+    if (playerWins === 2) {
+        gameInfo.innerText = 'Game has ended, congratulations you win!';
+        playAgainButton.style.display = "inline-block";
+    } else if (computerWins === 2) {
+        gameInfo.innerText = 'Game has ended, better luck next time!';
+        playAgainButton.style.display = "inline-block";
     }
 }
 
 function playGame() {
-    let playerSelection = prompt('Select your weapon (Rock, Paper, Scissors)');
+    let playerSelection = prompt();
+
     playRound(playerSelection, getComputerChoice());
     countRounds();
-    endGame(playerLives, computerLives);
+    endGame(playerWins, computerWins);
 }

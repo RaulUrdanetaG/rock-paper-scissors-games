@@ -10,11 +10,11 @@
 
 <body>
     <div class="container">
-        <div class="panel left-panel">
+        <div class="panel player-panel">
             <div class="panel-imgs">
-                <button><img src="./images/rock.png" alt="Rock vector image"></button>
-                <button><img src="./images/paper.png" alt="Paper Vector image"></button>
-                <button><img src="./images/scissors.png" alt="Scissors vector image"></button>
+                <button class="player-button rock"><img src="./images/rock.png" alt="Rock vector image"></button>
+                <button class="player-button paper"><img src="./images/paper.png" alt="Paper Vector image"></button>
+                <button class="player-button scissors"><img src="./images/scissors.png" alt="Scissors vector image"></button>
             </div>
             <h1 class="panel-title">Your weapon</h1>
         </div>
@@ -23,25 +23,25 @@
             <div class="score-count">
                 <div class="player-wins">
                     <h2>Wins</h2>
-                    <h2>0</h2>
+                    <h2 class="number">0</h2>
                 </div>
                 <div class="rounds">
                     <h2>Rounds</h2>
-                    <h2>0</h2>
+                    <h2 class="number">0</h2>
                 </div>
                 <div class="computer-wins">
                     <h2>Wins</h2>
-                    <h2>0</h2>
+                    <h2 class="number">0</h2>
                 </div>
             </div>
-            <h2 class="round-info">You win!</h2>
-            <button class="play-again-button">Play Again!</button>
+            <h2 class="round-info">Select your weapon to play</h2>
+            <button id="play-again-button" class="oculto">Play Again!</button>
         </div>
-        <div class="panel right-panel">
+        <div class="panel computer-panel">
             <div class="panel-imgs">
-                <img src="./images/rock.png" alt="Rock vector image">
-                <img src="./images/paper.png" alt="Paper Vector image">
-                <img src="./images/scissors.png" alt="Scissors Vector image">
+                <img class="computer-weapon rock" src="./images/rock.png" alt="Rock vector image">
+                <img class="computer-weapon paper" src="./images/paper.png" alt="Paper Vector image">
+                <img class="computer-weapon scissors" src="./images/scissors.png" alt="Scissors Vector image">
             </div>
             <h1 class="panel-title">Computer's weapon</h1>
         </div>
