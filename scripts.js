@@ -4,6 +4,8 @@ const computerImg = document.querySelectorAll('.computer-weapon');
 const rounds = document.querySelector('.rounds .number');
 const cpuWins = document.querySelector('.computer-wins .number');
 const playWins = document.querySelector('.player-wins .number');
+const cpuWinsBlock = document.querySelector('.computer-wins');
+const playWinsBlock = document.querySelector('.player-wins');
 const gameInfo = document.querySelector('.round-info');
 const playAgainButton = document.getElementById('play-again-button');
 
@@ -15,7 +17,7 @@ function getComputerChoice() {
     const weapons = ['Rock', 'Paper', 'Scissors']
     const computerSelection = weapons[Math.floor(Math.random() * weapons.length)]
 
-    switch (computerSelection){
+    switch (computerSelection) {
         case 'Rock':
             computerImg[0].style.filter = 'none';
             computerImg[0].style.transform = 'scale(1.1)';
@@ -102,6 +104,8 @@ function resetGame() {
     weaponButtons.forEach((button) => {
         button.disabled = false;
     });
+    playWinsBlock.style.border = '2px solid transparent';
+    cpuWinsBlock.style.border = '2px solid transparent';
 }
 
 function endGame(playerWins, computerWins) {
@@ -111,12 +115,14 @@ function endGame(playerWins, computerWins) {
         weaponButtons.forEach((button) => {
             button.disabled = true;
         });
+        playWinsBlock.style.border = '2px solid white';
     } else if (computerWins === 5) {
         gameInfo.innerText = 'Game has ended, better luck next time!';
         playAgainButton.style.display = "inline-block";
         weaponButtons.forEach((button) => {
             button.disabled = true;
         });
+        cpuWinsBlock.style.border = '2px solid white';
     }
 }
 
@@ -125,7 +131,7 @@ function playGame() {
 
     weaponButtons.forEach((weapon) => {
         weapon.addEventListener('click', () => {
-            if(weapon.classList.contains('rock')){
+            if (weapon.classList.contains('rock')) {
                 playerImg[0].style.filter = 'none';
                 playerImg[0].style.transform = 'scale(1.1)';
                 playerImg[1].style.filter = 'grayscale(100%)';
@@ -134,7 +140,7 @@ function playGame() {
                 playerImg[2].style.transform = 'scale(1)';
                 playerSelection = 'Rock';
                 // console.log(playerSelection)
-            }else if(weapon.classList.contains('paper')){
+            } else if (weapon.classList.contains('paper')) {
                 playerImg[0].style.filter = 'grayscale(100%)';
                 playerImg[0].style.transform = 'scale(1)';
                 playerImg[1].style.filter = 'none';
@@ -143,7 +149,7 @@ function playGame() {
                 playerImg[2].style.transform = 'scale(1)';
                 playerSelection = 'Paper';
                 // console.log(playerSelection)
-            }else if(weapon.classList.contains('scissors')){
+            } else if (weapon.classList.contains('scissors')) {
                 playerImg[0].style.filter = 'grayscale(100%)';
                 playerImg[0].style.transform = 'scale(1)';
                 playerImg[1].style.filter = 'grayscale(100%)';
@@ -158,12 +164,12 @@ function playGame() {
             endGame(playerWins, computerWins);
         });
     });
-    
+
     playAgainButton.addEventListener('click', () => {
         resetGame();
     });
 
-    
+
 }
 
 playGame();

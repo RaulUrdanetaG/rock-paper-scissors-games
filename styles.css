@@ -12,23 +12,32 @@ body {
 
 .container {
     height: 100%;
+    margin: 0;
+    padding: 0;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     color: white;
+}
+
+.content {
+    display: flex;
 }
 
 .panel {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
     text-align: center;
 }
 
 .player-panel,
 .computer-panel {
-    margin: 3em;
+    margin: 2em 3em;
     flex: 1;
+    justify-content: flex-end;
 }
 
 .panel-imgs {
@@ -39,7 +48,7 @@ body {
     gap: 10px;
 }
 
-.panel-imgs img{
+.panel-imgs img {
     filter: grayscale(100%);
 }
 
@@ -60,7 +69,7 @@ body {
     max-width: 250px;
 }
 
-.player-button:hover{
+.player-button:hover {
     cursor: pointer;
     -webkit-transform: scale(1.3);
     transform: scale(1.1);
@@ -69,10 +78,11 @@ body {
 }
 
 .middle-panel {
-    flex-direction: column;
+    display: flex;
+    /* flex-direction: column; */
     align-items: center;
-    gap: 10px;
-    flex: 2 1 0;
+    justify-content: center;
+    flex: 2 2 0;
 }
 
 .middle-panel h1 {
@@ -86,25 +96,26 @@ body {
     width: 100%;
 }
 
-#play-again-button:hover{
-    cursor: pointer;
-    -webkit-transform: scale(1.3);
-    transform: scale(1.1);
-    transition: all .1s;
+.player-wins,
+.computer-wins{
+    display: flex;
+    flex-direction: column;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    padding: 5px;
+    gap: 20px;
 }
 
-footer {
-    padding-left: 8%;
-    padding-right: 8%;
+.rounds{
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: white;
+    flex-direction: column;
+    gap: 20px;
 }
 
-.creator-info {
-    display: flex;
-    gap: 5px;
+.player-wins h2,
+.computer-wins h2,
+.rounds h2{
+    margin: 0;
 }
 
 #play-again-button {
@@ -119,6 +130,30 @@ footer {
     display: none;
 }
 
-/* .oculto{
-    
-} */
+#play-again-button:hover {
+    cursor: pointer;
+    -webkit-transform: scale(1.3);
+    transform: scale(1.1);
+    transition: all .1s;
+}
+
+.creator-info {
+    height: auto;
+    display: flex;
+    gap: 5px;
+    justify-self: flex-end;
+}
+
+.creator-info img {
+    height: 24px;
+    width: auto;
+}
+
+.creator-info img {
+    align-self: center;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
