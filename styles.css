@@ -97,7 +97,7 @@ body {
 }
 
 .player-wins,
-.computer-wins{
+.computer-wins {
     display: flex;
     flex-direction: column;
     border: 2px solid transparent;
@@ -106,7 +106,7 @@ body {
     gap: 20px;
 }
 
-.rounds{
+.rounds {
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -114,7 +114,7 @@ body {
 
 .player-wins h2,
 .computer-wins h2,
-.rounds h2{
+.rounds h2 {
     margin: 0;
 }
 
