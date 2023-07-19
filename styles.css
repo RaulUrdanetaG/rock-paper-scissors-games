@@ -142,6 +142,7 @@ body {
     display: flex;
     gap: 5px;
     justify-self: flex-end;
+    align-items: center;
 }
 
 .creator-info img {
